@@ -1,0 +1,21 @@
+import catar.*
+
+
+describe "Tests para los pasteleros"{
+	const pastelero = new Cocinero(especialidad = new Pastelero(dulzorDeseado = 10))
+
+	// Punto 7
+	test "Pastelero da una calificacion de una entrada"{
+		const entrada = new Entrada()
+		assert.equals(pastelero.catarYDarCalificacion(entrada),0)
+	}	
+	test "Pastelero da una calificacion de un plato principal"{
+		const principal = new Principal(azucar = 15,esBonito = true)
+		assert.equals(pastelero.catarYDarCalificacion(principal),7.5)
+	}
+	test "Pastelero da una calificacion de un postre"{
+		const postre = new Postre(cantColores = 4)
+		assert.equals(pastelero.catarYDarCalificacion(postre),10)
+		
+	}
+}
